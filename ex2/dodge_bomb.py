@@ -28,6 +28,10 @@ def check_bound(rect: pg.Rect) -> tuple[bool,bool]:
     return yoko, tate
 
 def gameover(screen: pg.Surface) -> None:
+    """
+    引数:スクリーン
+    戻り値：なし
+    """
     bk_image = pg.Surface((WIDTH, HEIGHT))
     pg.draw.rect(bk_image,(0,0,0),bk_image.get_rect())
     pg.Surface.set_alpha(bk_image,150)
@@ -43,6 +47,10 @@ def gameover(screen: pg.Surface) -> None:
     pg.time.wait(2000)
 
 def init_bb_imgs() -> tuple[list[pg.Surface], list[int]]:
+    """
+    引数:なし
+    戻り値：爆弾の加速度と爆弾の画像のリスト
+    """
     bb_imgs = []
     bb_accs = [a for a in range(1,11)]
     for r in range(1,11):
@@ -50,6 +58,9 @@ def init_bb_imgs() -> tuple[list[pg.Surface], list[int]]:
         pg.draw.circle(bb_img,(255,0,0),(10*r,10*r),10*r)
         bb_imgs.append(bb_img)
     return bb_imgs, bb_accs
+
+
+
 
 def main():
     pg.display.set_caption("逃げろ！こうかとん")
