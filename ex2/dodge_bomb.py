@@ -17,7 +17,8 @@ def check_bound(rect: pg.Rect) -> tuple[bool,bool]:
     """
     引数:こうかとんrectまたは爆弾rect
     戻り値：taple[bool,bool](横方向判定結果,縦方向判定結果)
-    画面内ならTrue,画面外ならFalse"""
+    画面内ならTrue,画面外ならFalse
+    """
 
     yoko , tate = True, True
     if rect.left < 0 or WIDTH < rect.right: #横
